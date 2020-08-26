@@ -1,17 +1,59 @@
 {
   "name": "what-to-watch",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Личный проект «Что посмотреть» от HTML Academy",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "26.0.10",
+    "@types/node": "^12.12.54",
+    "@types/react": "^16.9.47",
+    "@types/react-dom": "^16.9.8",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "typescript": "^3.7.5"
+  },
   "scripts": {
-    "eslint": "eslint src/**/*.js",
-    "test": "npm run eslint"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
+    "isready": "npm run format && npm run eslint && npm run build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
-    "eslint": "5.13.0",
-    "eslint-config-htmlacademy": "0.5.2"
-  },
-  "engines": {
-    "node": "10"
+    "@types/react-test-renderer": "16.9.3",
+    "react-test-renderer": "16.13.1"
   }
 }
